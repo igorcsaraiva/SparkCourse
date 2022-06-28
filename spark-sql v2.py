@@ -8,3 +8,4 @@ data.printSchema()
 
 data.groupBy("age").avg("friends").orderBy("avg(friends)").show(500)
 
+spark.stop()
