@@ -23,8 +23,8 @@ def eliminar_indice0_valor_vazio(lista: list) -> list:
 df = df.map(lambda x: x.split(' ')).map(lambda x: (x[0], len(eliminar_indice0_valor_vazio(x)))).groupByKey().mapValues(lambda x: sum(x)).max(lambda x: x[1])
 
 print(df)
-df_name = df_name.filter(df_name.Id == int(df[0])).collect()
+df_name = df_name.filter(df_name.Id == int(df[0])).first()
 
-print(df_name[0].Nome)
+print(df_name.Nome)
 
 
